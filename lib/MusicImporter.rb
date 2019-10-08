@@ -8,7 +8,11 @@ class MusicImporter
   def files
     files = Dir.glob(path + "/*mp3")
     files.collect do |file|
+<<<<<<< HEAD
       file.gsub(/(.*\/)/, "")
+=======
+      file.gsub("(.*\/)", "")
+>>>>>>> 1d2cc53aa52d8c6ce68a035cf9ffa0f6e08f6274
     end
   end
   

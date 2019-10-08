@@ -1,6 +1,9 @@
 require "pry"
 class MusicLibraryController
+<<<<<<< HEAD
   attr_accessor
+=======
+>>>>>>> 1d2cc53aa52d8c6ce68a035cf9ffa0f6e08f6274
 
   def initialize(path = "./db/mp3s")
     library = MusicImporter.new(path)
@@ -19,6 +22,7 @@ class MusicLibraryController
       puts "To play a song, enter 'play song'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
+<<<<<<< HEAD
       input = gets.chomp
       case input
       when "list songs"
@@ -36,17 +40,27 @@ class MusicLibraryController
       end
     end
 
+=======
+      input = gets
+    end
+>>>>>>> 1d2cc53aa52d8c6ce68a035cf9ffa0f6e08f6274
   end
   
   
   
   def list_songs
+<<<<<<< HEAD
     sorted_songs = Song.all.sort! do |a, b|
       a.name <=> b.name
+=======
+    sorted_songs = Song.all.sort_by! do |song|
+      song.name
+>>>>>>> 1d2cc53aa52d8c6ce68a035cf9ffa0f6e08f6274
     end
     
     sorted_songs.uniq!
     
+<<<<<<< HEAD
     sorted_songs.each do |song|
       puts "#{sorted_songs.index(song) + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
@@ -130,4 +144,11 @@ class MusicLibraryController
   end
   
     
+=======
+    sorted_songs.map do |song|
+      puts "#{sorted_songs.index(song) + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+  end
+  
+>>>>>>> 1d2cc53aa52d8c6ce68a035cf9ffa0f6e08f6274
 end
